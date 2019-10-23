@@ -69,3 +69,5 @@ driver = webdriver.Chrome('/Users/oantazo/Desktop/code/drivers/chromedriver77') 
 isFound = queryGoogle(driver, searchValue, urlToSearchFor)
 
 print ('Found: ', isFound)
+
+#Need Assert
