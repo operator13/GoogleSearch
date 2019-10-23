@@ -70,4 +70,4 @@ isFound = queryGoogle(driver, searchValue, urlToSearchFor)
 
 print ('Found: ', isFound)
 
-#Need Assert1
+#Need Assert
