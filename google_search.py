@@ -7,13 +7,19 @@
 # i found the xpath variables using chrome inspector.  i right clicked on the element and did a copy xpath.  then i searched for that xpath in the inspector to make sure i got the 1 correct value.
 # after that, i fine tuned the xpath to make sure it was stable  enough to find the element, but flexible enough to withstand website html changes
 
-import time
-from selenium import webdriver
+import time                            # In order to do the Waits
+from selenium import webdriver         # importing selenium webdriver
 import sys
 from selenium.webdriver.common.by import By
 
+#sys. argv is a list in Python, which contains the command-line arguments passed to the script. With the len(sys. argv)
+# function you can count the number of arguments
+
 print ('Number of arguments:', len(sys.argv), 'arguments.')
 print ('Argument List:', str(sys.argv))
+
+#sys. argv is a list in Python, which contains the command-line arguments passed to the script. With the len(sys. argv)
+# function you can count the number of arguments
 
 # this function queries google and returns the top 3 results
 def queryGoogle(driver, searchValue, urlToSearchFor):
@@ -36,8 +42,11 @@ def queryGoogle(driver, searchValue, urlToSearchFor):
         search_box.send_keys(searchValue)
 
         search_box.submit()
-        time.sleep(1)
-        #orvile: query for top 3 entries adn return in object
+        time.sleep(1)         #Clicking Submit button
+
+        #I need to query for top 3 entries and return in object
+
+
 
         #links = driver.find_element(By.xpath('//*/a/div/cite'))
         links = driver.find_elements_by_xpath('//*/a/div/cite')
@@ -49,25 +58,26 @@ def queryGoogle(driver, searchValue, urlToSearchFor):
                 isFound = True
         return isFound
 
-        #orville: return if foudn.
     except:
         print ('something went wrong in the search')
-        print (sys.exc_info())
+        print (sys.exc_info())              #This function returns a tuple of three values that give information about the exception that is currently being handled
         return False
     finally:
     # find search results
         driver.quit()
-    #Orville: return top 3 or emtpy object
 
-
+#The sys module provides information about constants, functions and methods of the Python interpreter.
 searchValue = sys.argv[1]
 urlToSearchFor = sys.argv[2]
 
 driver = webdriver.Chrome('/Users/oantazo/Desktop/code/drivers/chromedriver77')  # Optional argument, if not specified will search path.
 
-#orville: test failuers by changing driver location
+#I can test failuers by changing driver location
 isFound = queryGoogle(driver, searchValue, urlToSearchFor)
 
-print ('Found: ', isFound)
-assert isFound
+print('Found: ', isFound)
+
+
+
+# assert isFound
 #Need Assert
