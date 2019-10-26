@@ -7,19 +7,17 @@
 # i found the xpath variables using chrome inspector.  i right clicked on the element and did a copy xpath.  then i searched for that xpath in the inspector to make sure i got the 1 correct value.
 # after that, i fine tuned the xpath to make sure it was stable  enough to find the element, but flexible enough to withstand website html changes
 
+#sys. argv is a list in Python, which contains the command-line arguments passed to the script. With the len(sys. argv)
+# function you can count the number of arguments
+
 import time                            # In order to do the Waits
 from selenium import webdriver         # importing selenium webdriver
 import sys
 from selenium.webdriver.common.by import By
 
-#sys. argv is a list in Python, which contains the command-line arguments passed to the script. With the len(sys. argv)
-# function you can count the number of arguments
-
 print ('Number of arguments:', len(sys.argv), 'arguments.')
 print ('Argument List:', str(sys.argv))
 
-#sys. argv is a list in Python, which contains the command-line arguments passed to the script. With the len(sys. argv)
-# function you can count the number of arguments
 
 # this function queries google and returns the top 3 results
 def queryGoogle(driver, searchValue, urlToSearchFor):
@@ -66,7 +64,7 @@ def queryGoogle(driver, searchValue, urlToSearchFor):
     # find search results
         driver.quit()
 
-#The sys module provides information about constants, functions and methods of the Python interpreter.
+
 searchValue = sys.argv[1]
 urlToSearchFor = sys.argv[2]
 

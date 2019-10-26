@@ -1,3 +1,5 @@
+
+
 print("Hello World!")
 print("I am now a Python Language Coder!")
 print("This is my second simple program!")
@@ -242,8 +244,10 @@ print(float(19))
 (1.2+2.1) == 3.3                       #Will return True because 1.2+2.1 = 3.3
 print((1.2+2.1) == 3.3)
 
-import math
 import random
+
+import math
+
 print(math.pi)                          #output:3.14159
 print(math.cos(math.pi))                #output: will be -1.0
 print(math.exp(10))                     #output: will be 22026.4
